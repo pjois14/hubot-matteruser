@@ -28,7 +28,7 @@
   },
   "main": "./src/matteruser",
   "dependencies": {
-    "mattermost-client": "^3.6.0",
+    "mattermost-client": "https://github.com/pjois14/mattermost-client.git",
     "parent-require": "^1.0.0",
     "q": "^1.4.1"
   }
