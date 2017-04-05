@@ -200,6 +200,7 @@ class Matteruser extends Adapter
         msg.channel_id = data.room
         msg.props.attachments = data.attachments || []
         msg.props.attachments = [msg.props.attachments] unless Array.isArray msg.props.attachments
+          robot.logger.debug "msg.props.attachment" msg.props.attachments
         if data.username && data.username != @robot.name
             msg.as_user = false
             msg.username = data.username
