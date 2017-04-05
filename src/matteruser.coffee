@@ -157,7 +157,7 @@ class Matteruser extends Adapter
 
     message: (msg) =>
         @robot.logger.debug  msg
-        mmPost = JSON.stringify(msg.data.post)
+        mmPost = JSON.parse msg.data.post
         @robot.logger.debug mmPost
         mmUser = @client.getUserByID mmPost.user_id
         return if mmPost.user_id == @self.id # Ignore our own output
