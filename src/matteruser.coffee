@@ -156,8 +156,9 @@ class Matteruser extends Adapter
             @client.customMessage(postData, postData.channel_id)
 
     message: (msg) =>
-        @robot.logger.debug "mmMsg" msg
-        mmPost = JSON.stringify msg.data.post
+        @robot.logger.debug  msg
+        mmPost = JSON.stringify(msg.data.post)
+        @robot.logger.debug mmPost
         mmUser = @client.getUserByID mmPost.user_id
         return if mmPost.user_id == @self.id # Ignore our own output
         @robot.logger.debug 'From: ' + mmPost.user_id + ', To: ' + @self.id
